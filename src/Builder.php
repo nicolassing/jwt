@@ -67,8 +67,8 @@ class Builder
     ) {
         $this->encoder = $encoder ?: new Encoder();
         $this->claimFactory = $claimFactory ?: new ClaimFactory();
-        $this->headers = ['typ'=> 'JWT', 'alg' => 'none'];
-        $this->claims = [];
+        $this->headers = array('typ'=> 'JWT', 'alg' => 'none');
+        $this->claims = array();
     }
 
     /**
@@ -263,10 +263,10 @@ class Builder
      */
     public function getToken()
     {
-        $payload = [
+        $payload = array(
             $this->encoder->base64UrlEncode($this->encoder->jsonEncode($this->headers)),
             $this->encoder->base64UrlEncode($this->encoder->jsonEncode($this->claims))
-        ];
+        );
 
         if ($this->signature !== null) {
             $payload[] = $this->encoder->base64UrlEncode($this->signature);

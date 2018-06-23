@@ -59,10 +59,10 @@ class Token
      * @param Signature $signature
      */
     public function __construct(
-        array $headers = ['alg' => 'none'],
-        array $claims = [],
+        array $headers = array('alg' => 'none'),
+        array $claims = array(),
         Signature $signature = null,
-        array $payload = ['', '']
+        array $payload = array('', '')
     ) {
         $this->headers = $headers;
         $this->claims = $claims;
@@ -245,15 +245,19 @@ class Token
     /**
      * Yields the validatable claims
      *
-     * @return Generator
+     * @return array
      */
     private function getValidatableClaims()
     {
+        $claims = array();
+
         foreach ($this->claims as $claim) {
             if ($claim instanceof Validatable) {
-                yield $claim;
+                $claims[] = $claim;
             }
         }
+
+        return $claims;
     }
 
     /**

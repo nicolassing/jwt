@@ -21,7 +21,7 @@ abstract class BaseSigner implements Signer
     /**
      * {@inheritdoc}
      */
-    public function modifyHeader(array &$headers)
+    public function modifyHeader(&$headers)
     {
         $headers['alg'] = $this->getAlgorithmId();
     }

@@ -89,7 +89,7 @@ class KeyParser
 
         preg_match(
             '/[\-]{5}BEGIN ' . $header . '[\-]{5}(.*)[\-]{5}END ' . $header . '[\-]{5}/',
-            str_replace([PHP_EOL, "\n", "\r"], '', $key->getContent()),
+            str_replace(array(PHP_EOL, "\n", "\r"), '', $key->getContent()),
             $match
         );
 

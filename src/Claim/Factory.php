@@ -29,18 +29,18 @@ class Factory
      *
      * @param array $callbacks
      */
-    public function __construct(array $callbacks = [])
+    public function __construct(array $callbacks = array())
     {
         $this->callbacks = array_merge(
-            [
-                'iat' => [$this, 'createLesserOrEqualsTo'],
-                'nbf' => [$this, 'createLesserOrEqualsTo'],
-                'exp' => [$this, 'createGreaterOrEqualsTo'],
-                'iss' => [$this, 'createEqualsTo'],
-                'aud' => [$this, 'createEqualsTo'],
-                'sub' => [$this, 'createEqualsTo'],
-                'jti' => [$this, 'createEqualsTo']
-            ],
+            array(
+                'iat' => array($this, 'createLesserOrEqualsTo'),
+                'nbf' => array($this, 'createLesserOrEqualsTo'),
+                'exp' => array($this, 'createGreaterOrEqualsTo'),
+                'iss' => array($this, 'createEqualsTo'),
+                'aud' => array($this, 'createEqualsTo'),
+                'sub' => array($this, 'createEqualsTo'),
+                'jti' => array($this, 'createEqualsTo')
+            ),
             $callbacks
         );
     }

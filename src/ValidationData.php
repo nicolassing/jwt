@@ -31,7 +31,7 @@ class ValidationData
     {
         $currentTime = $currentTime ?: time();
 
-        $this->items = [
+        $this->items = array(
             'jti' => null,
             'iss' => null,
             'aud' => null,
@@ -39,7 +39,7 @@ class ValidationData
             'iat' => $currentTime,
             'nbf' => $currentTime,
             'exp' => $currentTime
-        ];
+        );
     }
 
     /**
