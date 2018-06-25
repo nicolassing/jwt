@@ -7,15 +7,13 @@
 
 namespace Lcobucci\JWT;
 
-use JsonSerializable;
-
 /**
  * Basic interface for token claims
  *
  * @author Luís Otávio Cobucci Oblonczyk <lcobucci@gmail.com>
  * @since 2.0.0
  */
-interface Claim extends JsonSerializable
+interface Claim
 {
     /**
      * Returns the claim name
