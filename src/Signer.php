@@ -30,7 +30,7 @@ interface Signer
      *
      * @param array $headers
      */
-    public function modifyHeader(array &$headers);
+    public function modifyHeader(&$headers);
 
     /**
      * Returns a signature for given data

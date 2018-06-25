@@ -29,7 +29,7 @@ class Factory
      *
      * @param array $callbacks
      */
-    public function __construct(array $callbacks = array())
+    public function __construct($callbacks = array())
     {
         $this->callbacks = array_merge(
             array(

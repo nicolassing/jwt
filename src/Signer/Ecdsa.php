@@ -125,7 +125,8 @@ abstract class Ecdsa extends BaseSigner
     private function extractSignature($value)
     {
         $length = $this->getSignatureLength();
-        $value = unpack('H*', $value)[1];
+        $values =  unpack('H*', $value);
+        $value = $values[1];
 
         return new Signature(
             $this->adapter->hexDec(substr($value, 0, $length)),
